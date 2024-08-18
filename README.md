@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# React Firebase Chat Room
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple chat room application built using React and Firebase. It allows users to sign in with Google, send messages in real-time, and view messages from other users. The application leverages Firebase Authentication, Firestore, and Firebase Analytics.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [How to Use](#how-to-use)
+- [Deployment](#deployment)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Google Authentication:** Users can sign in using their Google accounts.
+- **Real-Time Messaging:** Messages are updated in real-time using Firestore.
+- **User-Friendly Interface:** The UI is simple, clean, and easy to use.
+- **Community Guidelines:** Clear guidelines are provided to ensure a safe and respectful environment.
+- **Responsive Design:** The application is designed to work well on various screen sizes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React:** Front-end JavaScript library for building user interfaces.
+- **Firebase Authentication:** Manages user authentication via Google.
+- **Firestore:** Cloud-hosted NoSQL database that stores chat messages.
+- **Firebase Analytics:** Collects usage data to help improve the app.
+- **CSS:** Custom styles for the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+<img src="./screenshots/Screenshot 2024-08-18 063822.png" width="320px" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="./screenshots/Screenshot 2024-08-18 064014.png" width="320px" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup and Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To set up and run this project locally, follow these steps:
 
-### `npm run eject`
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/rishi-vakharia/react-firebase-chat-room.git
+   cd react-firebase-chat-room
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies:**
+   Make sure you have Node.js installed. Then run:
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Firebase Setup:**
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+   - Enable **Google Authentication** in the Firebase Authentication settings.
+   - Set up **Firestore** in your Firebase project.
+   - Add your Firebase configuration details in the `firebase.initializeApp()` method within the `App.js` file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
+   The app will be available at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How to Use
 
-## Learn More
+1. **Sign In:**
+   - Click on "Sign in with Google" to authenticate yourself.
+   
+2. **Chat:**
+   - Type a message in the input box and press Enter or click the send button (🕊️) to send it.
+   - View your message and other users' messages in real-time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Sign Out:**
+   - Click on the "Sign Out" button in the header to log out.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+You can deploy the site using the `build` folder and the `serve` command.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Build the project:**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   This will create a `build` folder with a production-ready version of your app.
 
-### Making a Progressive Web App
+2. **Serve the app locally:**
+   Install `serve` globally if you haven't already:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm install -g serve
+   ```
 
-### Advanced Configuration
+   Then, serve the `build` folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   serve -s build
+   ```
 
-### Deployment
+   Your app will be available at `http://localhost:5000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. **Deploy to a hosting service:**
 
-### `npm run build` fails to minify
+   - You can deploy the contents of the `build` folder to any static site hosting service, such as GitHub Pages, Vercel, or Netlify.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Structure
+
+```
+/src         
+  |-- App.css              # CSS file for styling the application
+  |-- index.js             # Entry point for React
+  |-- App.js			  # Main application component
+        |-- ChatRoom.js    # Chat room component handling messages
+        |-- ChatMessage.js # Chat message component for displaying individual messages
+        |-- SignIn.js      # Sign-in component for Google authentication
+        |-- SignOut.js     # Sign-out component for logging out
+```
+
+## Future Improvements
+
+- **Add Private Messaging:** Implement private chat rooms or direct messaging between users.
+- **Enhanced User Profiles:** Allow users to set display names or profile pictures.
+- **Message Reactions:** Enable users to react to messages with emojis.
+- **Moderation Tools:** Implement moderation features to enforce community guidelines.
+
+
+## References
+
+https://www.youtube.com/watch?v=zQyrwxMPm88
+
