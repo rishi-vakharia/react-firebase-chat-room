@@ -55,7 +55,16 @@ To set up and run this project locally, follow these steps:
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
    - Enable **Google Authentication** in the Firebase Authentication settings.
    - Set up **Firestore** in your Firebase project.
-   - Add your Firebase configuration details in the `firebase.initializeApp()` method within the `App.js` file.
+   - Create a `.env` file in the root of your project and add your Firebase configuration:
+     ```env
+     REACT_APP_API_KEY=your-api-key
+     REACT_APP_AUTH_DOMAIN=your-auth-domain
+     REACT_APP_PROJECT_ID=your-project-id
+     REACT_APP_STORAGE_BUCKET=your-storage-bucket
+     REACT_APP_MESSAGING_SENDER_ID=your-messaging-sender-id
+     REACT_APP_APP_ID=your-app-id
+     REACT_APP_MEASUREMENT_ID=your-measurement-id
+     ```
 
 4. **Start the development server:**
    ```bash
