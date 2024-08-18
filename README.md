@@ -6,6 +6,7 @@ This project is a simple chat room application built using React and Firebase. I
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
 - [Setup and Installation](#setup-and-installation)
 - [How to Use](#how-to-use)
 - [Deployment](#deployment)
